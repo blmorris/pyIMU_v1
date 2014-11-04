@@ -1,5 +1,9 @@
 Copyright (c) 2014 Sebastian Plamauer
 
+based on the schematcis from Sparkfun that can be found here:
+http://dlnmh9ip6v2uc.cloudfront.net/datasheets/Sensors/Pressure/BMP180%20breakout.pdf
+http://dlnmh9ip6v2uc.cloudfront.net/datasheets/Sensors/IMU/mpu-9150_breakout.pdf
+
 This work is licensed under the Creative Commons Attribution 3.0
 Unported License. To view a copy of this license, visit
 http://creativecommons.org/licenses/by/3.0/ or send a letter to
