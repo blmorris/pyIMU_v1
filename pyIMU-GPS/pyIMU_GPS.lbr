@@ -5877,6 +5877,22 @@ Source: VISHAY wscwsn.pdf</description>
 <text x="-8.75" y="3.9" size="1.27" layer="25">&gt;NAME</text>
 <text x="-8.75" y="-5.15" size="1.27" layer="27">&gt;VALUE</text>
 </package>
+<package name="TSW-104-S-S-MOD">
+<wire x1="-5.209" y1="1.155" x2="5.209" y2="1.155" width="0.2032" layer="21"/>
+<wire x1="5.209" y1="1.155" x2="5.209" y2="-1.155" width="0.2032" layer="21"/>
+<wire x1="5.209" y1="-1.155" x2="-5.209" y2="-1.155" width="0.2032" layer="21"/>
+<wire x1="-5.209" y1="-1.155" x2="-5.209" y2="1.155" width="0.2032" layer="21"/>
+<rectangle x1="-4.16" y1="-0.35" x2="-3.46" y2="0.35" layer="51"/>
+<rectangle x1="-1.62" y1="-0.35" x2="-0.92" y2="0.35" layer="51"/>
+<rectangle x1="0.92" y1="-0.35" x2="1.62" y2="0.35" layer="51"/>
+<rectangle x1="3.46" y1="-0.35" x2="4.16" y2="0.35" layer="51"/>
+<pad name="1" x="3.81" y="0" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="2" x="1.27" y="0" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="3" x="-1.27" y="0" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="4" x="-3.81" y="0" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<text x="-5.715" y="-1.27" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="6.985" y="-1.27" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="BMP180">
@@ -9107,6 +9123,27 @@ Source: Samtec TSW.pdf</description>
 </gates>
 <devices>
 <device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="TSW-104-02-S-S" prefix="J" uservalue="yes">
+<gates>
+<gate name="-1" symbol="MPIN" x="0" y="0" addlevel="always"/>
+<gate name="-2" symbol="MPIN" x="0" y="-2.54" addlevel="always"/>
+<gate name="-3" symbol="MPIN" x="0" y="-5.08" addlevel="always"/>
+<gate name="-4" symbol="MPIN" x="0" y="-7.62" addlevel="always"/>
+</gates>
+<devices>
+<device name="" package="TSW-104-S-S-MOD">
+<connects>
+<connect gate="-1" pin="1" pad="1"/>
+<connect gate="-2" pin="1" pad="2"/>
+<connect gate="-3" pin="1" pad="3"/>
+<connect gate="-4" pin="1" pad="4"/>
+</connects>
 <technologies>
 <technology name=""/>
 </technologies>

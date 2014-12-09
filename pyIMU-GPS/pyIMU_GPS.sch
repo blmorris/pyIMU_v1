@@ -10104,6 +10104,22 @@ Source: Samtec TSW.pdf</description>
 <hole x="0.2" y="0.8" drill="1.2"/>
 <text x="-3.25" y="6" size="1.27" layer="21">&gt;NAME</text>
 </package>
+<package name="TSW-104-S-S-MOD">
+<wire x1="-5.209" y1="1.155" x2="5.209" y2="1.155" width="0.2032" layer="21"/>
+<wire x1="5.209" y1="1.155" x2="5.209" y2="-1.155" width="0.2032" layer="21"/>
+<wire x1="5.209" y1="-1.155" x2="-5.209" y2="-1.155" width="0.2032" layer="21"/>
+<wire x1="-5.209" y1="-1.155" x2="-5.209" y2="1.155" width="0.2032" layer="21"/>
+<rectangle x1="-4.16" y1="-0.35" x2="-3.46" y2="0.35" layer="51"/>
+<rectangle x1="-1.62" y1="-0.35" x2="-0.92" y2="0.35" layer="51"/>
+<rectangle x1="0.92" y1="-0.35" x2="1.62" y2="0.35" layer="51"/>
+<rectangle x1="3.46" y1="-0.35" x2="4.16" y2="0.35" layer="51"/>
+<pad name="1" x="3.81" y="0" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="2" x="1.27" y="0" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="3" x="-1.27" y="0" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="4" x="-3.81" y="0" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<text x="-5.715" y="-1.27" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="6.985" y="-1.27" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="MPINV">
@@ -10271,6 +10287,27 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="TSW-104-02-S-S" prefix="J" uservalue="yes">
+<gates>
+<gate name="-1" symbol="MPIN" x="0" y="0" addlevel="always"/>
+<gate name="-2" symbol="MPIN" x="0" y="-2.54" addlevel="always"/>
+<gate name="-3" symbol="MPIN" x="0" y="-5.08" addlevel="always"/>
+<gate name="-4" symbol="MPIN" x="0" y="-7.62" addlevel="always"/>
+</gates>
+<devices>
+<device name="" package="TSW-104-S-S-MOD">
+<connects>
+<connect gate="-1" pin="1" pad="1"/>
+<connect gate="-2" pin="1" pad="2"/>
+<connect gate="-3" pin="1" pad="3"/>
+<connect gate="-4" pin="1" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -10311,7 +10348,7 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 <part name="3D-FIX" library="led" deviceset="LED" device="CHIPLED_0805"/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="R4" library="rcl" deviceset="R-US_" device="R0603" value="4.7K"/>
-<part name="C9" library="rcl" deviceset="C-EU" device="C0603K" value="0.1uF"/>
+<part name="C11" library="rcl" deviceset="C-EU" device="C0603K" value="0.1uF"/>
 <part name="J3" library="pyIMU_GPS" deviceset="22-?-03" device="27-2031"/>
 <part name="U5" library="custom" deviceset="MAX4173" device="" value="MAX4173"/>
 <part name="C12" library="rcl" deviceset="C-EU" device="C0603K" value="0.1uF"/>
@@ -10335,7 +10372,7 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 <part name="J5" library="pyIMU_GPS" deviceset="TSW-102-02-S-S" device="" value=""/>
 <part name="B1" library="custom" deviceset="BATT_HOLDER" device="K3000"/>
 <part name="GND16" library="supply1" deviceset="GND" device=""/>
-<part name="C11" library="rcl" deviceset="C-EU" device="C0603K" value="0.1uF"/>
+<part name="C9" library="rcl" deviceset="C-EU" device="C0603K" value="0.1uF"/>
 <part name="C13" library="rcl" deviceset="C-EU" device="C0603K" value="0.1uF"/>
 <part name="C14" library="rcl" deviceset="C-EU" device="C0603K" value="0.1uF"/>
 <part name="GND18" library="supply1" deviceset="GND" device=""/>
@@ -10343,6 +10380,7 @@ wire to board 2.54 mm (.1 inch) pitch header</description>
 <part name="GND20" library="supply1" deviceset="GND" device=""/>
 <part name="C15" library="rcl" deviceset="C-EU" device="C0603K" value="0.1uF"/>
 <part name="GND21" library="supply1" deviceset="GND" device=""/>
+<part name="J6" library="pyIMU_GPS" deviceset="TSW-104-02-S-S" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -10352,7 +10390,7 @@ GlobalTop, based on MediaTek MT3339 GPS chipset.
 RTCM is a serial input for external Differential GPS 
 data, not enabled in default firmware.
 Note that DGPS capability is provided by SBAS signal 
-(WAAS, EGNO, GAGAN, MSAS) which requires no external input.</text>
+(WAAS, EGNOS, GAGAN, MSAS) which requires no external input.</text>
 <text x="114.3" y="43.18" size="2.1844" layer="97">When VBAT=11.2V, 
 voltage to ADC ~ VBAT/6 = 1.87V</text>
 <text x="73.66" y="12.7" size="2.1844" layer="97">MAX4173 has fixed output impedance of 12K
@@ -10369,7 +10407,7 @@ B+ (battery +) connects to sense resitor on battery side.
 BS connects to sense resistor on load side.
 B- connects to battery negative terminal.</text>
 <text x="12.7" y="137.16" size="2.1844" layer="97">3.3V LDO output connects directly
-to C9 on board. If layout is rearranged, 
+to C11 on board. If layout is rearranged, 
 LDO output should get its own 100nF
 bypass capacitor.</text>
 <text x="15.24" y="205.74" size="2.1844" layer="97">Pyboard connection headers</text>
@@ -10453,7 +10491,7 @@ Magnetometer</text>
 <attribute name="NAME" x="174.498" y="82.7786" size="1.778" layer="95"/>
 <attribute name="VALUE" x="179.07" y="82.804" size="1.778" layer="96"/>
 </instance>
-<instance part="C9" gate="G$1" x="154.94" y="83.82"/>
+<instance part="C11" gate="G$1" x="154.94" y="83.82"/>
 <instance part="J3" gate="-1" x="73.66" y="33.02" smashed="yes" rot="MR0">
 <attribute name="NAME" x="73.66" y="29.718" size="1.524" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="66.802" y="36.957" size="1.778" layer="96"/>
@@ -10483,7 +10521,7 @@ Magnetometer</text>
 <instance part="J5" gate="-2" x="175.26" y="134.62"/>
 <instance part="B1" gate="G$1" x="162.56" y="124.46" rot="R90"/>
 <instance part="GND16" gate="1" x="162.56" y="116.84"/>
-<instance part="C11" gate="G$1" x="170.18" y="129.54"/>
+<instance part="C9" gate="G$1" x="170.18" y="129.54"/>
 <instance part="C13" gate="G$1" x="101.6" y="38.1" rot="R90"/>
 <instance part="C14" gate="G$1" x="63.5" y="20.32"/>
 <instance part="GND18" gate="1" x="63.5" y="12.7"/>
@@ -10491,6 +10529,10 @@ Magnetometer</text>
 <instance part="GND20" gate="1" x="99.06" y="175.26"/>
 <instance part="C15" gate="G$1" x="81.28" y="55.88"/>
 <instance part="GND21" gate="1" x="81.28" y="45.72"/>
+<instance part="J6" gate="-1" x="63.5" y="175.26"/>
+<instance part="J6" gate="-2" x="63.5" y="172.72"/>
+<instance part="J6" gate="-3" x="63.5" y="170.18"/>
+<instance part="J6" gate="-4" x="63.5" y="167.64"/>
 </instances>
 <busses>
 </busses>
@@ -10545,7 +10587,7 @@ Magnetometer</text>
 <wire x1="172.72" y1="81.28" x2="170.18" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="170.18" y1="81.28" x2="170.18" y2="86.36" width="0.1524" layer="91"/>
 <junction x="170.18" y="86.36"/>
-<pinref part="C9" gate="G$1" pin="1"/>
+<pinref part="C11" gate="G$1" pin="1"/>
 <junction x="154.94" y="86.36"/>
 </segment>
 <segment>
@@ -10667,7 +10709,7 @@ Magnetometer</text>
 <wire x1="154.94" y1="63.5" x2="154.94" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="154.94" y1="63.5" x2="154.94" y2="78.74" width="0.1524" layer="91"/>
 <junction x="154.94" y="63.5"/>
-<pinref part="C9" gate="G$1" pin="2"/>
+<pinref part="C11" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="U5" gate="G$1" pin="GND@2"/>
@@ -10710,7 +10752,7 @@ Magnetometer</text>
 <pinref part="B1" gate="G$1" pin="-"/>
 <pinref part="GND16" gate="1" pin="GND"/>
 <junction x="162.56" y="119.38"/>
-<pinref part="C11" gate="G$1" pin="2"/>
+<pinref part="C9" gate="G$1" pin="2"/>
 <wire x1="170.18" y1="119.38" x2="162.56" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="170.18" y1="124.46" x2="170.18" y2="119.38" width="0.1524" layer="91"/>
 <pinref part="J5" gate="-1" pin="1"/>
@@ -10726,17 +10768,22 @@ Magnetometer</text>
 <pinref part="GND21" gate="1" pin="GND"/>
 <wire x1="81.28" y1="48.26" x2="81.28" y2="50.8" width="0.1524" layer="91"/>
 </segment>
-</net>
-<net name="XY-8/MPU_INT" class="0">
 <segment>
-<pinref part="U2" gate="G$1" pin="INT"/>
-<wire x1="144.78" y1="190.5" x2="149.86" y2="190.5" width="0.1524" layer="91"/>
-<label x="149.86" y="190.5" size="1.778" layer="95" xref="yes"/>
+<wire x1="60.96" y1="167.64" x2="55.88" y2="167.64" width="0.1524" layer="91"/>
+<pinref part="J6" gate="-4" pin="1"/>
+<label x="55.88" y="167.64" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
+</net>
+<net name="XY-8" class="0">
 <segment>
 <wire x1="55.88" y1="182.88" x2="60.96" y2="182.88" width="0.1524" layer="91"/>
 <pinref part="J2" gate="-8" pin="1"/>
 <label x="55.88" y="182.88" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<wire x1="55.88" y1="175.26" x2="60.96" y2="175.26" width="0.1524" layer="91"/>
+<pinref part="J6" gate="-1" pin="1"/>
+<label x="55.88" y="175.26" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -10866,11 +10913,16 @@ Magnetometer</text>
 <label x="182.88" y="76.2" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="XY-5" class="0">
+<net name="XY-5/MPU_INT" class="0">
 <segment>
 <pinref part="J2" gate="-5" pin="1"/>
 <wire x1="60.96" y1="190.5" x2="55.88" y2="190.5" width="0.1524" layer="91"/>
 <label x="55.88" y="190.5" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U2" gate="G$1" pin="INT"/>
+<wire x1="144.78" y1="190.5" x2="149.86" y2="190.5" width="0.1524" layer="91"/>
+<label x="149.86" y="190.5" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="XY-6" class="0">
@@ -10879,12 +10931,22 @@ Magnetometer</text>
 <wire x1="60.96" y1="187.96" x2="55.88" y2="187.96" width="0.1524" layer="91"/>
 <label x="55.88" y="187.96" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<wire x1="60.96" y1="170.18" x2="55.88" y2="170.18" width="0.1524" layer="91"/>
+<pinref part="J6" gate="-3" pin="1"/>
+<label x="55.88" y="170.18" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="XY-7" class="0">
 <segment>
 <pinref part="J2" gate="-7" pin="1"/>
 <wire x1="60.96" y1="185.42" x2="55.88" y2="185.42" width="0.1524" layer="91"/>
 <label x="55.88" y="185.42" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<wire x1="60.96" y1="172.72" x2="55.88" y2="172.72" width="0.1524" layer="91"/>
+<pinref part="J6" gate="-2" pin="1"/>
+<label x="55.88" y="172.72" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -11022,7 +11084,7 @@ Magnetometer</text>
 <wire x1="162.56" y1="134.62" x2="157.48" y2="134.62" width="0.1524" layer="91"/>
 <junction x="162.56" y="134.62"/>
 <label x="157.48" y="134.62" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="C11" gate="G$1" pin="1"/>
+<pinref part="C9" gate="G$1" pin="1"/>
 <wire x1="170.18" y1="132.08" x2="170.18" y2="134.62" width="0.1524" layer="91"/>
 <pinref part="B1" gate="G$1" pin="+"/>
 <pinref part="J5" gate="-2" pin="1"/>
