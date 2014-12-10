@@ -10071,10 +10071,10 @@ Source: Samtec TSW.pdf</description>
 <wire x1="-7.9" y1="-7.9" x2="-7.9" y2="7.9" width="0.2" layer="51"/>
 <wire x1="-7.9" y1="7.5" x2="-7.9" y2="7.9" width="0.2" layer="21"/>
 <wire x1="-7.9" y1="7.9" x2="-5.75" y2="7.9" width="0.2" layer="21"/>
-<wire x1="-7.9" y1="-7.5" x2="-7.9" y2="-7.9" width="0.2" layer="22"/>
-<wire x1="-7.9" y1="-7.9" x2="-5.75" y2="-7.9" width="0.2" layer="22"/>
-<wire x1="7.9" y1="7.5" x2="7.9" y2="7.9" width="0.2" layer="22"/>
-<wire x1="7.9" y1="7.9" x2="5.75" y2="7.9" width="0.2" layer="22"/>
+<wire x1="-7.9" y1="-7.5" x2="-7.9" y2="-7.9" width="0.2" layer="21"/>
+<wire x1="-7.9" y1="-7.9" x2="-5.75" y2="-7.9" width="0.2" layer="21"/>
+<wire x1="7.9" y1="7.5" x2="7.9" y2="7.9" width="0.2" layer="21"/>
+<wire x1="7.9" y1="7.9" x2="5.75" y2="7.9" width="0.2" layer="21"/>
 <wire x1="7.9" y1="-7.5" x2="7.9" y2="-7.9" width="0.2" layer="21"/>
 <wire x1="7.9" y1="-7.9" x2="5.75" y2="-7.9" width="0.2" layer="21"/>
 <smd name="P$1" x="-7.75" y="6.75" dx="2" dy="1" layer="1" roundness="20"/>
@@ -10392,7 +10392,7 @@ data, not enabled in default firmware.
 Note that DGPS capability is provided by SBAS signal 
 (WAAS, EGNOS, GAGAN, MSAS) which requires no external input.</text>
 <text x="114.3" y="43.18" size="2.1844" layer="97">When VBAT=11.2V, 
-voltage to ADC ~ VBAT/6 = 1.87V</text>
+voltage to ADC ~ VBAT/5 = 2.24V</text>
 <text x="73.66" y="12.7" size="2.1844" layer="97">MAX4173 has fixed output impedance of 12K
 100nF output cap C14 provides LPF, tau=1.2ms</text>
 <text x="114.3" y="33.02" size="2.1844" layer="97">Feedback capacitor provides 
