@@ -278,7 +278,7 @@ distributor RS 112-3794</description>
 <wire x1="3.2" y1="3.2" x2="3.1999" y2="-3.1999" width="0.2032" layer="51"/>
 <wire x1="3.1999" y1="-3.1999" x2="-3.2" y2="-3.2" width="0.2032" layer="51"/>
 <wire x1="-3.2" y1="-3.2" x2="-3.1999" y2="3.1999" width="0.2032" layer="51"/>
-<pad name="1" x="0" y="0" drill="1.27"/>
+<pad name="1" x="0" y="0" drill="1.524"/>
 <pad name="2" x="-2.5499" y="2.5499" drill="1.778"/>
 <pad name="3" x="2.5499" y="2.5499" drill="1.778"/>
 <pad name="4" x="2.5499" y="-2.5499" drill="1.778"/>
